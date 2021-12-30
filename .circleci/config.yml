@@ -11,7 +11,7 @@ workflows:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
-          path: 'docker/nginx/'
+          dockerfile: ./docker/api/Dockerfile
           repo: daily_report_nginx
           tag: "${CIRCLE_SHA1}"
           filters:
@@ -32,7 +32,7 @@ workflows:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
-          path: 'docker/api/'
+          dockerfile: ./docker/api/Dockerfile
           repo: daily_report_rails_api
           tag: "${CIRCLE_SHA1}"
           filters:

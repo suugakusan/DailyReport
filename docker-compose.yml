@@ -9,7 +9,8 @@ services:
    volumes:
      - mysql_data:/var/lib/mysql
  web:
-   build: .
+   build:
+     context: ./docker/api
    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
    env_file: db.env
    volumes:
@@ -20,7 +21,7 @@ services:
      - db
  nginx:
     build:
-      context: ./nginx
+      context: ./docker/nginx
     volumes:
       - ./src:/myapp
     ports:

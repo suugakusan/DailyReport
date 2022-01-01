@@ -1,7 +1,0 @@
-FROM ruby:2.7
-ARG RAILS_MASTER_KEY
-ENV RAILS_MASTER_KEY ${RAILS_MASTER_KEY}
-ENV RAILS_ENV=production
-WORKDIR /myapp
-COPY ./src /myapp
-RUN bundle install
